@@ -3,19 +3,19 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { BASE_URL, options } from './pixabay-api.js';
-// ************************************************************
+// *********************************
 
 const galleryEl = document.querySelector('.gallery');
 const searchInputEl = document.querySelector('input[name="searchQuery"');
 const searchFormEl = document.getElementById('search-form');
 
-// ************************************************************
+// *********************************
 const lightbox = new SimpleLightbox('.lightbox', {
   captionsData: 'alt',
   captionDelay: 250,
 });
 
-// ************************************************************
+// *********************************
 let totalHits = 0;
 let reachedEnd = false;
 
@@ -32,37 +32,34 @@ function renderGallery(hits) {
         downloads,
       }) => {
         return `
-          <a href="${largeImageURL}" class="lightbox">
-           <div class="photo-card">
-             <img src="${webformatURL}" alt="${tags}" loading="lazy" />
-              <div class="info">
-                <p class="info-item">
-                   <b>Likes</b>
-                      ${likes}
-                      </p>
-                      <p class="info-item">
-                      <b>Views</b>
-                      ${views}
-                      </p>
-                      <p class="info-item">
-                      <b>Comments</b>
-                      ${comments}
-                      </p>
-                      <p class="info-item">
-                      <b>Downloads</b>
-                      ${downloads}
-                      </p>
-                      </div>
-                  </div>
-              </a>
-              `;
-      }
-    )
-    .join('');
+         <a href="${largeImageURL}" class="lightbox">
+          <div class="photo-card">
+           <img src="${webformatURL}" alt="${tags}" loading="lazy" />
+            <div class="info">
+             <p class="info-item">
+               <b>Likes</b>
+               ${likes}
+             </p>
+             <p class="info-item">
+               <b>Views</b>
+               ${views}
+             </p>
+             <p class="info-item">
+               <b>Comments</b>
+               ${comments}
+             </p>
+             <p class="info-item">
+               <b>Downloads</b>
+               ${downloads}
+             </p>
+            </div>
+           </div>
+          </a> `;
+      }).join('');
 
   galleryEl.insertAdjacentHTML('beforeend', markup);
 
-  // ************************************************************
+// *********************************
 
   if (options.params.page * options.params.per_page >= totalHits) {
     if (!reachedEnd) {
@@ -73,7 +70,7 @@ function renderGallery(hits) {
   lightbox.refresh();
 }
 
-// ************************************************************
+// *********************************
 
 async function handleSubmit(e) {
   e.preventDefault();
@@ -106,7 +103,7 @@ async function handleSubmit(e) {
   }
 }
 
-// ************************************************************
+// *********************************
 
 async function loadMore() {
   options.params.page += 1;

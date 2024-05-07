@@ -1,18 +1,11 @@
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+p,h1,h2,h3,h4,h5,h6 {
     margin: 0;
 }
-
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    background-color: rgb(229, 241, 252);
 }
-
 img {
     display: block;
     width: 270px;
@@ -32,19 +25,33 @@ img {
     width: 1200px;
 }
 
-/* Search Field */
+/* Search Box */
 .header {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 0;
-    background-image: linear-gradient( blue, white, blue);
+    background-image: linear-gradient(darkblue, rgb(229, 241, 252));
 }
 
 .search-form-input {
-    padding-left: 15px;
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     border: none;
     outline: none;
+}
+.button {
+    margin-left: 10px;
+    background-color: darkblue;
+    border-radius: 18px;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    font-size: 10px;
+
 }
 
 /* Gallery */

@@ -3,13 +3,13 @@ import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { BASE_URL, options } from './pixabay-api.js';
-// *********************************
+
 
 const galleryEl = document.querySelector('.gallery');
 const searchInputEl = document.querySelector('input[name="searchQuery"');
 const searchFormEl = document.getElementById('search-form');
 
-// *********************************
+
 const lightbox = new SimpleLightbox('.lightbox', {
   captionsData: 'alt',
   captionDelay: 250,
@@ -29,8 +29,7 @@ function renderGallery(hits) {
         likes,
         views,
         comments,
-        downloads,
-      }) => {
+        downloads, }) => {
         return `
          <a href="${largeImageURL}" class="lightbox">
           <div class="photo-card">

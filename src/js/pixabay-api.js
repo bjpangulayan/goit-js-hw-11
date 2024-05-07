@@ -1,3 +1,4 @@
+// 43730897-75789e447f4fce7bddaa4c488
 export const BASE_URL = 'https://pixabay.com/api/';
 const API_KEY = '43730897-75789e447f4fce7bddaa4c488';
 

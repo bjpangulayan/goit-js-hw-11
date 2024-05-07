@@ -12,19 +12,16 @@ img {
     height: 150px;
     object-fit: cover;
 }
-
 .section {
     padding-top: 30px;
     padding-bottom: 30px;
 }
-
 .container {
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
     width: 1200px;
 }
-
 /* Search Box */
 .header {
     display: flex;
@@ -33,7 +30,6 @@ img {
     padding: 20px 0;
     background-image: linear-gradient(darkblue, rgb(229, 241, 252));
 }
-
 .search-form-input {
     border-radius: 5px;
     padding-left: 5px;
